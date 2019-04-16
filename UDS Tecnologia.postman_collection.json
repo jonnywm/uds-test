@@ -1,0 +1,120 @@
+{
+	"info": {
+		"_postman_id": "9b4508e5-dd50-4892-b8bf-0bd727b0d3b8",
+		"name": "UDS Tecnologia",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "Save Pessoa",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"name": "Content-Type",
+						"value": "application/json",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n\t\"nome\":\"Jonny Willer\",\n\t\"email\":\"jonnywm2@gmail.com\"\n}"
+				},
+				"url": {
+					"raw": "http://localhost:9090/pessoa/new",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "9090",
+					"path": [
+						"pessoa",
+						"new"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "List Pessoa",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": ""
+				},
+				"url": {
+					"raw": "http://localhost:9090/pessoa/list",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "9090",
+					"path": [
+						"pessoa",
+						"list"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Update Pessoa",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"name": "Content-Type",
+						"value": "application/json",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n\t\"id\":5,\n\t\"nome\":\"Jonny Magalhães\",\n\t\"email\":\"jonnywm@gmail.com\"\n}"
+				},
+				"url": {
+					"raw": "http://localhost:9090/pessoa/update",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "9090",
+					"path": [
+						"pessoa",
+						"update"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Remove",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": ""
+				},
+				"url": {
+					"raw": "http://localhost:9090/pessoa/remove/6",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "9090",
+					"path": [
+						"pessoa",
+						"remove",
+						"6"
+					]
+				}
+			},
+			"response": []
+		}
+	]
+}

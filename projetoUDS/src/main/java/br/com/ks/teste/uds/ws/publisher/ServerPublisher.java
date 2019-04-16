@@ -1,13 +1,13 @@
 package br.com.ks.teste.uds.ws.publisher;
 
-import com.sun.jersey.api.container.grizzly2.GrizzlyServerFactory;
-import com.sun.jersey.api.core.PackagesResourceConfig;
-import com.sun.jersey.api.core.ResourceConfig;
+import br.com.ks.teste.uds.ws.publisher.resource.AppResources;
 import java.io.IOException;
+import java.net.URI;
 import java.util.function.Supplier;
 import java.util.logging.Level;
 import java.util.logging.Logger;
 import org.glassfish.grizzly.http.server.HttpServer;
+import org.glassfish.jersey.grizzly2.httpserver.GrizzlyHttpServerFactory;
 
 /**
  *
@@ -26,11 +26,10 @@ public class ServerPublisher {
         try {
 
             if (HTTP_SERVER == null || !HTTP_SERVER.isStarted()) {
-                ResourceConfig rc = new PackagesResourceConfig("br.com.ks.teste.uds");
-                HTTP_SERVER = GrizzlyServerFactory.createHttpServer(URL, rc);
+                HTTP_SERVER = GrizzlyHttpServerFactory.createHttpServer(URI.create(URL), new AppResources());
             }
 
-        } catch (NullPointerException | IOException | IllegalArgumentException ex) {
+        } catch (NullPointerException | IllegalArgumentException ex) {
             Logger.getLogger(ServerPublisher.class.getSimpleName()).log(Level.SEVERE, (Supplier<String>) ex);
 
         }
