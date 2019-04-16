@@ -2,12 +2,12 @@
 Repository for Test
 
 Como testar a aplicação:
-Execute o jar UDSProject-jar-with-dependencies.jar	com o comando 
+Execute o jar UDSProject-jar-with-dependencies.jar com o comando 
 java -jar UDSProject-jar-with-dependencies.jar
 
 Execute os comandos abaixo em um Postgresql local.
 
-create database projetouds/
+create database projetouds;
 create table pessoa(id bigint primary key, nome varchar(80) not null, email varchar(80), data_cadastro timestamp default current_timestamp);
 create sequence pessoa_id_seq start with 1;
 
